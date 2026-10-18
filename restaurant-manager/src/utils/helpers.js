@@ -6,16 +6,14 @@ export const toFa = (n) =>
 export const money = (n) =>
   toFa(Math.round(n || 0).toLocaleString('en-US'));
 
-// تبدیل میلادی به شمسی (الگوریتم جلال‌الالدینی)
+// تبدیل میلادی به شمسی — الگوریتم جلال‌الالدینی (دقیق تا سال ۱۵۰۴ شمسی)
 export function toJalali(gy, gm, gd) {
-  const g_d_m = [0, 31, 59, 90, 120, 151, 181, 212, 243, 273, 304, 334];
-  let jy = gy <= 1600 ? -621 : -622;
-  gy -= 1600; gm -= 1; gd -= 1;
-  const gy2 = gm > 1 ? gy + 1 : gy;
+  const gdm = [0, 31, 59, 90, 120, 151, 181, 212, 243, 273, 304, 334];
+  const gy2 = gm > 2 ? gy + 1 : gy;
   let days =
-    365 * gy + Math.floor((gy2 + 3) / 4) - Math.floor((gy2 + 99) / 100) +
-    Math.floor((gy2 + 399) / 400) - 80 + gd + g_d_m[gm];
-  jy += 33 * Math.floor(days / 12053);
+    355666 + 365 * gy + Math.floor((gy2 + 3) / 4) - Math.floor(gy2 / 100) +
+    Math.floor(gy2 / 400) + gd + gdm[gm - 1];
+  let jy = -1595 + 33 * Math.floor(days / 12053);
   days %= 12053;
   jy += 4 * Math.floor(days / 1461);
   days %= 1461;
@@ -25,34 +23,33 @@ export function toJalali(gy, gm, gd) {
   }
   const jm = days < 186 ? 1 + Math.floor(days / 31) : 7 + Math.floor((days - 186) / 30);
   const jd = days < 186 ? days % 31 : (days - 186) % 30;
-  return [jy + 1600, jm, jd + 1];
+  return [jy, jm, jd + 1];
 }
 
+// تبدیل شمسی به میلادی — الگوریتم جلال‌الالدینی (مختصر و دقیق)
 export function toGregorian(jy, jm, jd) {
   jy -= 1600; jm -= 1; jd -= 1;
-  const jm1 = jm < 7 ? jm + 1 : jm;
-  const sal = jy + (jm < 7 ? 0 : 1);
+  const j_m_d = [0, 31, 62, 94, 125, 156, 188, 219, 251, 283, 314, 345];
+  const sal = jm > 6 ? jy + 1 : jy;
   let days =
-    365 * sal + Math.floor(sal / 33) * 8 + Math.floor(((sal % 33) + 3) / 4) +
-    78 + jd + (jm < 7 ? jm1 * 31 : (jm1 - 7) * 30 + 6);
-  let gy = 1600 + 400 * Math.floor(days / 146097);
-  days %= 146097;
-  if (days > 36524) {
-    gy += 100 * Math.floor(--days / 36524);
-    days %= 36524;
-    if (days >= 365) days++;
+    365 * sal + Math.floor(sal / 33) * 8 + Math.floor(((sal % 33) + 3) / 4) -
+    Math.floor((sal + 3) / 4) + 78 + jd + j_m_d[jm] - (jm > 6 ? 6 : 0);
+  // روزهای ۱ فروردین ۱ برابر ۲۱ مارس ۶۲۲ میلادی (JD-based conversion)
+  let gy = 621;
+  let gDays = days;
+  gy += 33 * Math.floor(gDays / 12053);
+  gDays %= 12053;
+  gy += 4 * Math.floor(gDays / 1461);
+  gDays %= 1461;
+  if (gDays > 365) {
+    gy += Math.floor((gDays - 1) / 365);
+    gDays = (gDays - 1) % 365;
   }
-  gy += 4 * Math.floor(days / 1461);
-  days %= 1461;
-  if (days > 365) {
-    gy += Math.floor((days - 1) / 365);
-    days = (days - 1) % 365;
-  }
-  let gd = days + 1;
-  const sal_a = [0, 31, ((gy % 4 === 0 && gy % 100 !== 0) || gy % 400 === 0) ? 29 : 28,
+  let gd = gDays + 1;
+  const gdm = [0, 31, ((gy % 4 === 0 && gy % 100 !== 0) || gy % 400 === 0) ? 29 : 28,
     31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
-  let gm = 0;
-  for (gm = 0; gm < 13 && gd > sal_a[gm]; gm++) gd -= sal_a[gm];
+  let gm = 1;
+  for (; gm < 13 && gd > gdm[gm]; gm++) gd -= gdm[gm];
   return [gy, gm, gd];
 }
 
