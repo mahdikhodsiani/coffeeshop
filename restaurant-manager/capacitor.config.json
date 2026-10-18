@@ -1,0 +1,8 @@
+{
+  "appId": "com.example.restaurantmanager",
+  "appName": "مدیر رستوران",
+  "webDir": "dist",
+  "bundledWebRuntime": false,
+  "android": { "allowMixedContent": true },
+  "server": { "androidScheme": "https" }
+}

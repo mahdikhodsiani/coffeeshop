@@ -1,0 +1,16 @@
+{
+  "appId": "com.example.restaurantmanager",
+  "productName": "مدیر رستوران",
+  "directories": { "output": "release" },
+  "files": ["dist/**/*", "electron/**/*"],
+  "win": {
+    "target": [{ "target": "nsis", "arch": ["x64"] }],
+    "icon": "build/icon.ico"
+  },
+  "nsis": {
+    "oneClick": false,
+    "allowToChangeInstallationDirectory": true,
+    "createDesktopShortcut": true,
+    "shortcutName": "مدیر رستوران"
+  }
+}

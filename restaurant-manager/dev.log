@@ -1,0 +1,22 @@
+nohup: ignoring input
+
+  VITE v5.4.21  ready in 259 ms
+
+  ➜  Local:   http://localhost:5173/
+  ➜  Network: http://21.0.14.3:5173/
+12:56:59 PM [vite] hmr update /src/App.jsx, /src/pages/POS.jsx, /src/pages/MenuManager.jsx, /src/pages/Accounting.jsx, /src/pages/Reports.jsx, /src/pages/CashDrawer.jsx, /src/pages/Settings.jsx, /src/pages/Dashboard.jsx
+12:57:24 PM [vite] hmr update /src/App.jsx, /src/pages/POS.jsx, /src/pages/MenuManager.jsx, /src/pages/Accounting.jsx, /src/pages/Reports.jsx, /src/pages/CashDrawer.jsx, /src/pages/Settings.jsx, /src/pages/Dashboard.jsx
+12:57:58 PM [vite] hmr update /src/App.jsx, /src/pages/POS.jsx, /src/pages/MenuManager.jsx, /src/pages/Accounting.jsx, /src/pages/Reports.jsx, /src/pages/CashDrawer.jsx, /src/pages/Settings.jsx, /src/pages/Dashboard.jsx
+12:58:14 PM [vite] hmr update /src/App.jsx, /src/pages/POS.jsx, /src/pages/MenuManager.jsx, /src/pages/Accounting.jsx, /src/pages/Reports.jsx, /src/pages/CashDrawer.jsx, /src/pages/Settings.jsx, /src/pages/Dashboard.jsx
+12:58:37 PM [vite] hmr update /src/App.jsx, /src/pages/POS.jsx, /src/pages/MenuManager.jsx, /src/pages/Accounting.jsx, /src/pages/Reports.jsx, /src/pages/CashDrawer.jsx, /src/pages/Settings.jsx, /src/pages/Dashboard.jsx
+12:58:58 PM [vite] hmr update /src/App.jsx, /src/pages/POS.jsx, /src/pages/MenuManager.jsx, /src/pages/Accounting.jsx, /src/pages/Reports.jsx, /src/pages/CashDrawer.jsx, /src/pages/Settings.jsx, /src/pages/Dashboard.jsx
+12:59:13 PM [vite] hmr update /src/App.jsx, /src/pages/POS.jsx, /src/pages/MenuManager.jsx, /src/pages/Accounting.jsx, /src/pages/Reports.jsx, /src/pages/CashDrawer.jsx, /src/pages/Settings.jsx, /src/pages/Dashboard.jsx
+12:59:25 PM [vite] hmr update /src/App.jsx, /src/pages/POS.jsx, /src/pages/MenuManager.jsx, /src/pages/Accounting.jsx, /src/pages/Reports.jsx, /src/pages/CashDrawer.jsx, /src/pages/Settings.jsx, /src/pages/Dashboard.jsx
+12:59:35 PM [vite] hmr update /src/App.jsx, /src/pages/POS.jsx, /src/pages/MenuManager.jsx, /src/pages/Accounting.jsx, /src/pages/Reports.jsx, /src/pages/CashDrawer.jsx, /src/pages/Settings.jsx, /src/pages/Dashboard.jsx
+1:00:00 PM [vite] hmr update /src/App.jsx, /src/pages/POS.jsx, /src/pages/MenuManager.jsx, /src/pages/Accounting.jsx, /src/pages/Reports.jsx, /src/pages/CashDrawer.jsx, /src/pages/Settings.jsx, /src/pages/Dashboard.jsx
+1:00:24 PM [vite] hmr update /src/App.jsx, /src/pages/POS.jsx, /src/pages/MenuManager.jsx, /src/pages/Accounting.jsx, /src/pages/Reports.jsx, /src/pages/CashDrawer.jsx, /src/pages/Settings.jsx, /src/pages/Dashboard.jsx
+1:00:30 PM [vite] hmr update /src/App.jsx, /src/pages/POS.jsx, /src/pages/MenuManager.jsx, /src/pages/Accounting.jsx, /src/pages/Reports.jsx, /src/pages/CashDrawer.jsx, /src/pages/Settings.jsx, /src/pages/Dashboard.jsx
+1:00:36 PM [vite] hmr update /src/App.jsx, /src/pages/POS.jsx, /src/pages/MenuManager.jsx, /src/pages/Accounting.jsx, /src/pages/Reports.jsx, /src/pages/CashDrawer.jsx, /src/pages/Settings.jsx, /src/pages/Dashboard.jsx
+1:00:45 PM [vite] hmr update /src/App.jsx, /src/pages/POS.jsx, /src/pages/MenuManager.jsx, /src/pages/Accounting.jsx, /src/pages/Reports.jsx, /src/pages/CashDrawer.jsx, /src/pages/Settings.jsx, /src/pages/Dashboard.jsx
+1:01:01 PM [vite] hmr update /src/App.jsx, /src/pages/POS.jsx, /src/pages/MenuManager.jsx, /src/pages/Accounting.jsx, /src/pages/Reports.jsx, /src/pages/CashDrawer.jsx, /src/pages/Settings.jsx, /src/pages/Dashboard.jsx
+1:01:09 PM [vite] hmr update /src/App.jsx, /src/pages/POS.jsx, /src/pages/MenuManager.jsx, /src/pages/Accounting.jsx, /src/pages/Reports.jsx, /src/pages/CashDrawer.jsx, /src/pages/Settings.jsx, /src/pages/Dashboard.jsx
