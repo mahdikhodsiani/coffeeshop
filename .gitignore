@@ -1,2 +1,2 @@
-*.zip
-*.tar.gz
+node_modules/
+*.log

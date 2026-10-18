@@ -26,31 +26,12 @@ export function toJalali(gy, gm, gd) {
   return [jy, jm, jd + 1];
 }
 
-// تبدیل شمسی به میلادی — الگوریتم جلال‌الالدینی (مختصر و دقیق)
+// تبدیل شمسی به میلادی — با استفاده از کتابخانه معتبر jalaali-js (الگوریتم جلال‌الالدینی، دقیق تا ۱۵۰۴ شمسی)
+import * as jalaali from 'jalaali-js';
+
 export function toGregorian(jy, jm, jd) {
-  jy -= 1600; jm -= 1; jd -= 1;
-  const j_m_d = [0, 31, 62, 94, 125, 156, 188, 219, 251, 283, 314, 345];
-  const sal = jm > 6 ? jy + 1 : jy;
-  let days =
-    365 * sal + Math.floor(sal / 33) * 8 + Math.floor(((sal % 33) + 3) / 4) -
-    Math.floor((sal + 3) / 4) + 78 + jd + j_m_d[jm] - (jm > 6 ? 6 : 0);
-  // روزهای ۱ فروردین ۱ برابر ۲۱ مارس ۶۲۲ میلادی (JD-based conversion)
-  let gy = 621;
-  let gDays = days;
-  gy += 33 * Math.floor(gDays / 12053);
-  gDays %= 12053;
-  gy += 4 * Math.floor(gDays / 1461);
-  gDays %= 1461;
-  if (gDays > 365) {
-    gy += Math.floor((gDays - 1) / 365);
-    gDays = (gDays - 1) % 365;
-  }
-  let gd = gDays + 1;
-  const gdm = [0, 31, ((gy % 4 === 0 && gy % 100 !== 0) || gy % 400 === 0) ? 29 : 28,
-    31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
-  let gm = 1;
-  for (; gm < 13 && gd > gdm[gm]; gm++) gd -= gdm[gm];
-  return [gy, gm, gd];
+  const g = jalaali.toGregorian(jy, jm, jd);
+  return [g.gy, g.gm, g.gd];
 }
 
 export const todayJ = () => {
